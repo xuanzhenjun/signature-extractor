@@ -6,75 +6,6 @@
     <title>签名背景去除工具 - 免费在线去除签名背景</title>
     <meta name="description" content="免费在线去除签名背景，一键生成透明背景签名图片，支持PNG导出">
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 min-h-screen">
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 py-4">
-            <h1 class="text-2xl font-bold text-gray-900">签名背景去除</h1>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-4 py-8">
-        <!-- Upload Area -->
-        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-            <div id="dropZone" class="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center hover:border-blue-500 transition cursor-pointer">
-                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
-                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <p class="mt-4 text-lg text-gray-600">点击或拖拽上传签名图片</p>
-                <p class="mt-2 text-sm text-gray-500">支持 JPG、PNG 格式</p>
-                <input type="file" id="fileInput" accept="image/*" class="hidden">
-            </div>
-        </div>
-
-        <!-- Processing Area -->
-        <div id="processingArea" class="hidden">
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Original Image -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h2 class="text-lg font-semibold mb-4">原图</h2>
-                    <canvas id="originalCanvas" class="w-full border border-gray-200 rounded"></canvas>
-                </div>
-
-                <!-- Processed Image -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h2 class="text-lg font-semibold mb-4">处理后</h2>
-                    <canvas id="processedCanvas" class="w-full border border-gray-200 rounded bg-checkered"></canvas>
-                </div>
-            </div>
-
-            <!-- Controls -->
-            <div class="bg-white rounded-lg shadow-md p-6 mt-8">
-                <h3 class="text-lg font-semibold mb-4">调整参数</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">
-                            阈值 (越小越严格): <span id="thresholdValue">128</span>
-                        </label>
-                        <input type="range" id="threshold" min="0" max="255" value="128" class="w-full">
-                    </div>
-                </div>
-                <div class="mt-6 flex gap-4">
-                    <button id="downloadBtn" class="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium">
-                        下载透明背景图片
-                    </button>
-                    <button id="resetBtn" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
-                        重新上传
-                    </button>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t mt-16">
-        <div class="max-w-6xl mx-auto px-4 py-6 text-center text-gray-600 text-sm">
-            <p>© 2024 签名背景去除工具 | 完全免费 | 浏览器本地处理，保护隐私</p>
-        </div>
-    </footer>
-
     <style>
         .bg-checkered {
             background-image: 
@@ -85,7 +16,119 @@
             background-size: 20px 20px;
             background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
         }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
     </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 py-6">
+            <h1 class="text-3xl font-bold">✨ 签名背景去除工具</h1>
+            <p class="mt-2 text-purple-100">快速将纸质签名转换为透明背景的数字签名</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Features -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="bg-white rounded-lg p-4 shadow-sm text-center">
+                <div class="text-3xl mb-2">⚡</div>
+                <div class="font-semibold">秒速处理</div>
+                <div class="text-sm text-gray-600">AI智能识别，瞬间完成</div>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm text-center">
+                <div class="text-3xl mb-2">🔒</div>
+                <div class="font-semibold">隐私保护</div>
+                <div class="text-sm text-gray-600">本地处理，不上传服务器</div>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm text-center">
+                <div class="text-3xl mb-2">💎</div>
+                <div class="font-semibold">完全免费</div>
+                <div class="text-sm text-gray-600">无水印，无限制使用</div>
+            </div>
+        </div>
+
+        <!-- Upload Area -->
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <div id="dropZone" class="border-2 border-dashed border-purple-300 rounded-xl p-16 text-center hover:border-purple-500 hover:bg-purple-50 transition-all cursor-pointer">
+                <div class="text-6xl mb-4">📸</div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">上传签名图片</h2>
+                <p class="text-gray-600 mb-4">点击选择或拖拽图片到这里</p>
+                <div class="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition">
+                    选择图片
+                </div>
+                <p class="mt-4 text-sm text-gray-500">支持 JPG、PNG 格式，最大 10MB</p>
+                <input type="file" id="fileInput" accept="image/*" class="hidden">
+            </div>
+        </div>
+
+        <!-- Processing Area -->
+        <div id="processingArea" class="hidden">
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <!-- Original -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gray-100 px-6 py-3 border-b">
+                        <h3 class="font-semibold text-gray-700">📄 原图</h3>
+                    </div>
+                    <div class="p-6">
+                        <canvas id="originalCanvas" class="w-full border border-gray-200 rounded-lg"></canvas>
+                    </div>
+                </div>
+
+                <!-- Processed -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 border-b">
+                        <h3 class="font-semibold text-white">✨ 处理后（透明背景）</h3>
+                    </div>
+                    <div class="p-6">
+                        <canvas id="processedCanvas" class="w-full border border-gray-200 rounded-lg bg-checkered"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-lg font-semibold mb-4 flex items-center">
+                    <span class="mr-2">🎛️</span> 调整参数
+                </h3>
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-medium text-gray-700">背景去除强度</label>
+                        <span id="thresholdValue" class="text-sm font-bold text-purple-600">128</span>
+                    </div>
+                    <input type="range" id="threshold" min="0" max="255" value="128" 
+                           class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-purple-600">
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>保留更多</span>
+                        <span>去除更多</span>
+                    </div>
+                </div>
+                
+                <div class="flex gap-4">
+                    <button id="downloadBtn" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-4 rounded-xl hover:shadow-xl transition font-semibold text-lg">
+                        ⬇️ 下载透明背景图片
+                    </button>
+                    <button id="resetBtn" class="px-6 py-4 border-2 border-gray-300 rounded-xl hover:bg-gray-50 transition font-semibold">
+                        🔄 重新上传
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-16">
+        <div class="max-w-6xl mx-auto px-4 py-8">
+            <div class="text-center text-gray-600">
+                <p class="font-semibold mb-2">🔒 您的隐私受到保护</p>
+                <p class="text-sm">所有图片处理均在浏览器本地完成，不会上传到任何服务器</p>
+                <p class="text-sm mt-4 text-gray-500">© 2024 签名背景去除工具 | 完全免费使用</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="app.js"></script>
 </body>

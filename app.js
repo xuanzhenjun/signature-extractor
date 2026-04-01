@@ -1,11 +1,14 @@
 // 处理图片 - 去除背景
 function processImage() {
     const ctx = processedCanvas.getContext('2d');
-    processedCanvas.width = originalImage.width;
-    processedCanvas.height = originalImage.height;
+    const maxWidth = 600;
+    const scale = Math.min(1, maxWidth / originalImage.width);
+    
+    processedCanvas.width = originalImage.width * scale;
+    processedCanvas.height = originalImage.height * scale;
     
     // 绘制原图
-    ctx.drawImage(originalImage, 0, 0);
+    ctx.drawImage(originalImage, 0, 0, processedCanvas.width, processedCanvas.height);
     
     // 获取像素数据
     const imageData = ctx.getImageData(0, 0, processedCanvas.width, processedCanvas.height);
@@ -44,7 +47,9 @@ downloadBtn.addEventListener('click', () => {
         const a = document.createElement('a');
         a.href = url;
         a.download = 'signature-transparent.png';
+        document.body.appendChild(a);
         a.click();
+        document.body.removeChild(a);
         URL.revokeObjectURL(url);
     }, 'image/png');
 });
@@ -57,4 +62,5 @@ resetBtn.addEventListener('click', () => {
     currentThreshold = 128;
     thresholdSlider.value = 128;
     thresholdValue.textContent = 128;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
