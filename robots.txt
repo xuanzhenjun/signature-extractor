@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://signature-extractor.pages.dev/sitemap.xml

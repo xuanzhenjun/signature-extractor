@@ -3,8 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signature Extractor - Free Online Tool</title>
-    <meta name="description" content="Remove background from your signature for free. Upload and instantly get a transparent PNG — no upload to server required.">
+
+    <!-- Primary SEO Meta Tags -->
+    <title>Signature Extractor - Free Online Signature Background Remover</title>
+    <meta name="description" content="Free online tool to remove background from your signature instantly. Upload a JPG or PNG, get a transparent signature PNG in seconds — no server upload, 100% private.">
+    <meta name="keywords" content="signature extractor, remove signature background, transparent signature, signature PNG, background remover, free signature tool, online signature extractor">
+    <meta name="author" content="Signature Extractor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://signature-extractor.pages.dev/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://signature-extractor.pages.dev/">
+    <meta property="og:title" content="Signature Extractor - Free Online Signature Background Remover">
+    <meta property="og:description" content="Remove background from your signature for free. Upload and instantly get a transparent PNG — no upload to server required, completely private.">
+    <meta property="og:image" content="https://signature-extractor.pages.dev/og-image.png">
+    <meta property="og:site_name" content="Signature Extractor">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://signature-extractor.pages.dev/">
+    <meta name="twitter:title" content="Signature Extractor - Free Online Signature Background Remover">
+    <meta name="twitter:description" content="Remove background from your signature for free. Upload and instantly get a transparent PNG — completely private, no server upload.">
+    <meta name="twitter:image" content="https://signature-extractor.pages.dev/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233c9aff' stroke-width='2'><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>">
+
+    <!-- Structured Data: WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Signature Extractor",
+      "url": "https://signature-extractor.pages.dev/",
+      "description": "Free online tool to remove background from signatures. Upload a signature image and instantly get a transparent PNG — all processing happens in your browser.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Instant background removal",
+        "Local browser processing",
+        "No server upload required",
+        "Transparent PNG export",
+        "Adjustable threshold",
+        "Free with no limits"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Signature Extractor free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Signature Extractor is completely free to use with no watermarks and no usage limits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my signature safe when using this tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. All image processing happens locally in your browser using the Canvas API. Your signature images are never uploaded to any server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What image formats are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Signature Extractor supports JPG and PNG image formats, with a maximum file size of 10MB."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does signature background removal work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool analyzes each pixel's brightness. Light background pixels (above the threshold) are made transparent, while dark signature strokes are preserved. You can adjust the threshold slider to fine-tune the result."
+          }
+        }
+      ]
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .bg-checkered {
@@ -26,7 +120,7 @@
     <header style="background:#3c9aff; border-bottom:1px solid #2a8aef;">
         <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/><path d="M15 5l3 3"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/><path d="M15 5l3 3"/></svg>
                 <span style="font-size:16px; font-weight:700; color:#fff; letter-spacing:-0.3px;">Signature Extractor</span>
             </div>
             <span style="font-size:14px; color:#e8f4ff;">Local Processing · Privacy Safe</span>
@@ -46,9 +140,9 @@
     <!-- Main Content -->
     <main class="max-w-5xl mx-auto px-6 pb-16">
         <!-- Features -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5" aria-label="Key features">
             <div style="background:#f8f8f8; border:1px solid #e8e8e8; border-radius:10px; padding:20px 24px; display:flex; align-items:flex-start; gap:12px;">
-                <div style="width:36px; height:36px; background:#3c9aff; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <div style="width:36px; height:36px; background:#3c9aff; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;" aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                 </div>
                 <div>
@@ -57,7 +151,7 @@
                 </div>
             </div>
             <div style="background:#f8f8f8; border:1px solid #e8e8e8; border-radius:10px; padding:20px 24px; display:flex; align-items:flex-start; gap:12px;">
-                <div style="width:36px; height:36px; background:#0ecb81; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <div style="width:36px; height:36px; background:#0ecb81; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;" aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
                 <div>
@@ -66,7 +160,7 @@
                 </div>
             </div>
             <div style="background:#f8f8f8; border:1px solid #e8e8e8; border-radius:10px; padding:20px 24px; display:flex; align-items:flex-start; gap:12px;">
-                <div style="width:36px; height:36px; background:#ff7043; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <div style="width:36px; height:36px; background:#ff7043; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;" aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
                 </div>
                 <div>
@@ -78,15 +172,20 @@
 
         <!-- Upload Area -->
         <div id="uploadSection" style="background:#fff; border:1px solid #ebebeb; border-radius:12px; padding:0; overflow:hidden; margin-bottom:24px; transition:all 0.2s;">
-            <div id="dropZone" style="border:2px dashed #d4d4d4; border-radius:10px; margin:24px; padding:56px 24px; text-align:center; cursor:pointer; transition:all 0.2s;" 
+            <div id="dropZone" 
+                 role="button" 
+                 tabindex="0"
+                 aria-label="Upload signature image: click or drag and drop"
+                 style="border:2px dashed #d4d4d4; border-radius:10px; margin:24px; padding:56px 24px; text-align:center; cursor:pointer; transition:all 0.2s;" 
                  onmouseover="this.style.borderColor='#6c47ff';this.style.background='#f9f7ff'" 
-                 onmouseout="this.style.borderColor='#d4d4d4';this.style.background='transparent'">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px;display:block;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                 onmouseout="this.style.borderColor='#d4d4d4';this.style.background='transparent'"
+                 onkeydown="if(event.key==='Enter'||event.key===' '){document.getElementById('fileInput').click()}">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px;display:block;" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                 <p style="font-size:16px; font-weight:700; color:#1a1a1a; margin-bottom:6px;">Drop your image here</p>
                 <p style="font-size:16px; font-weight:700; color:#1a1a1a; margin-bottom:4px;">or click to browse</p>
                 <p style="font-size:14px; color:#999; margin-bottom:20px;">JPG, PNG supported · Max 10MB</p>
                 <button style="background:#3c9aff; color:#fff; border:none; padding:10px 28px; border-radius:6px; font-size:14px; font-weight:500; cursor:pointer; letter-spacing:0.2px;">Choose Image</button>
-                <input type="file" id="fileInput" accept="image/*" class="hidden">
+                <input type="file" id="fileInput" accept="image/*" class="hidden" aria-label="File input">
             </div>
         </div>
 
@@ -99,7 +198,7 @@
                         <span style="font-size:14px; font-weight:500; color:#666;">Original</span>
                     </div>
                     <div style="padding:20px;">
-                        <canvas id="originalCanvas" style="width:100%; border:1px solid #f0f0f0; border-radius:6px; display:block;"></canvas>
+                        <canvas id="originalCanvas" style="width:100%; border:1px solid #f0f0f0; border-radius:6px; display:block;" aria-label="Original signature image"></canvas>
                     </div>
                 </div>
 
@@ -110,7 +209,7 @@
                         <span style="font-size:11px; background:#f0edff; color:#6c47ff; padding:2px 8px; border-radius:4px; font-weight:500;">Transparent</span>
                     </div>
                     <div style="padding:20px;">
-                        <canvas id="processedCanvas" class="bg-checkered" style="width:100%; border:1px solid #f0f0f0; border-radius:6px; display:block;"></canvas>
+                        <canvas id="processedCanvas" class="bg-checkered" style="width:100%; border:1px solid #f0f0f0; border-radius:6px; display:block;" aria-label="Processed signature with transparent background"></canvas>
                     </div>
                 </div>
             </div>
@@ -127,13 +226,87 @@
                 </div>
             </div>
         </div>
+
+        <!-- How It Works Section (SEO content) -->
+        <section style="margin-top:48px;" aria-labelledby="how-it-works">
+            <h2 id="how-it-works" style="font-size:24px; font-weight:700; color:#1a1a1a; margin-bottom:24px; text-align:center;">How to Extract Your Signature</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div style="text-align:center; padding:24px;">
+                    <div style="width:48px; height:48px; background:#eff6ff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:20px; font-weight:700; color:#3c9aff;">1</div>
+                    <h3 style="font-size:16px; font-weight:700; color:#1a1a1a; margin-bottom:8px;">Upload Your Signature</h3>
+                    <p style="font-size:14px; color:#666; line-height:1.6;">Drag and drop or click to upload a JPG or PNG photo of your handwritten signature.</p>
+                </div>
+                <div style="text-align:center; padding:24px;">
+                    <div style="width:48px; height:48px; background:#eff6ff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:20px; font-weight:700; color:#3c9aff;">2</div>
+                    <h3 style="font-size:16px; font-weight:700; color:#1a1a1a; margin-bottom:8px;">Background Auto-Removed</h3>
+                    <p style="font-size:14px; color:#666; line-height:1.6;">The tool instantly detects and removes the white or light background, preserving only the signature strokes.</p>
+                </div>
+                <div style="text-align:center; padding:24px;">
+                    <div style="width:48px; height:48px; background:#eff6ff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:20px; font-weight:700; color:#3c9aff;">3</div>
+                    <h3 style="font-size:16px; font-weight:700; color:#1a1a1a; margin-bottom:8px;">Download Transparent PNG</h3>
+                    <p style="font-size:14px; color:#666; line-height:1.6;">Click download to save your signature as a high-quality transparent PNG, ready to use anywhere.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section (SEO content) -->
+        <section style="margin-top:48px;" aria-labelledby="faq-heading">
+            <h2 id="faq-heading" style="font-size:24px; font-weight:700; color:#1a1a1a; margin-bottom:24px; text-align:center;">Frequently Asked Questions</h2>
+            <div style="max-width:720px; margin:0 auto;" itemscope itemtype="https://schema.org/FAQPage">
+                <details style="border:1px solid #ebebeb; border-radius:10px; padding:20px 24px; margin-bottom:12px; background:#fff;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary style="font-size:15px; font-weight:600; color:#1a1a1a; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;" itemprop="name">
+                        Is Signature Extractor completely free?
+                        <span style="font-size:20px; color:#999; flex-shrink:0; margin-left:12px;">+</span>
+                    </summary>
+                    <div style="margin-top:12px; font-size:14px; color:#666; line-height:1.6;" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">Yes! Signature Extractor is 100% free — no account required, no watermarks, and no usage limits. You can process as many signatures as you like.</span>
+                    </div>
+                </details>
+                <details style="border:1px solid #ebebeb; border-radius:10px; padding:20px 24px; margin-bottom:12px; background:#fff;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary style="font-size:15px; font-weight:600; color:#1a1a1a; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;" itemprop="name">
+                        Is my signature safe? Does it get uploaded?
+                        <span style="font-size:20px; color:#999; flex-shrink:0; margin-left:12px;">+</span>
+                    </summary>
+                    <div style="margin-top:12px; font-size:14px; color:#666; line-height:1.6;" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">Your signature is completely safe. All processing happens locally in your browser using the Canvas API. Your images are never sent to any server — not even ours.</span>
+                    </div>
+                </details>
+                <details style="border:1px solid #ebebeb; border-radius:10px; padding:20px 24px; margin-bottom:12px; background:#fff;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary style="font-size:15px; font-weight:600; color:#1a1a1a; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;" itemprop="name">
+                        What image formats are supported?
+                        <span style="font-size:20px; color:#999; flex-shrink:0; margin-left:12px;">+</span>
+                    </summary>
+                    <div style="margin-top:12px; font-size:14px; color:#666; line-height:1.6;" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">We support JPG and PNG images up to 10MB. For best results, use a high-contrast image with a white or light-colored background.</span>
+                    </div>
+                </details>
+                <details style="border:1px solid #ebebeb; border-radius:10px; padding:20px 24px; margin-bottom:12px; background:#fff;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary style="font-size:15px; font-weight:600; color:#1a1a1a; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;" itemprop="name">
+                        How does the background removal work?
+                        <span style="font-size:20px; color:#999; flex-shrink:0; margin-left:12px;">+</span>
+                    </summary>
+                    <div style="margin-top:12px; font-size:14px; color:#666; line-height:1.6;" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">The tool analyzes each pixel's brightness. Pixels brighter than the threshold (default: 128) become transparent, while darker pixels (your signature strokes) are preserved. You can adjust the threshold to fine-tune the result.</span>
+                    </div>
+                </details>
+                <details style="border:1px solid #ebebeb; border-radius:10px; padding:20px 24px; background:#fff;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary style="font-size:15px; font-weight:600; color:#1a1a1a; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;" itemprop="name">
+                        Can I use the extracted signature in documents or PDFs?
+                        <span style="font-size:20px; color:#999; flex-shrink:0; margin-left:12px;">+</span>
+                    </summary>
+                    <div style="margin-top:12px; font-size:14px; color:#666; line-height:1.6;" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">Absolutely. The downloaded transparent PNG can be inserted into Word documents, PDFs, Google Docs, PowerPoint slides, or any design tool. The transparent background ensures a clean overlay on any background color.</span>
+                    </div>
+                </details>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer style="border-top:1px solid #ebebeb; background:#fff;">
         <div class="max-w-5xl mx-auto px-6 py-6 text-center">
             <p style="font-size:14px; color:#999;">All processing happens locally in your browser — your images are never uploaded to any server.</p>
-            <p style="font-size:12px; color:#bbb; margin-top:6px;">© 2026 Signature Extractor</p>
+            <p style="font-size:12px; color:#bbb; margin-top:6px;">© 2026 Signature Extractor · <a href="/sitemap.xml" style="color:#bbb; text-decoration:none;">Sitemap</a></p>
         </div>
     </footer>
 
