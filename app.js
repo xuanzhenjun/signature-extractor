@@ -56,6 +56,8 @@ function loadImage(file) {
             originalImage = img;
             displayOriginal();
             processImage();
+            // 隐藏上传区域，显示处理区域
+            document.getElementById('uploadSection').classList.add('hidden');
             processingArea.classList.remove('hidden');
             processingArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
         };
@@ -119,6 +121,7 @@ downloadBtn.addEventListener('click', () => {
 // 重置
 resetBtn.addEventListener('click', () => {
     processingArea.classList.add('hidden');
+    document.getElementById('uploadSection').classList.remove('hidden');
     fileInput.value = '';
     originalImage = null;
     currentThreshold = 128;
