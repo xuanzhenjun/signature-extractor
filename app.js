@@ -69,13 +69,11 @@ function loadImage(file) {
         };
         img.onerror = () => {
             console.error('Image failed to load from FileReader result');
-            alert('Failed to load image. Please try a different file.');
         };
         img.src = e.target.result;
     };
     reader.onerror = (e) => {
         console.error('FileReader error:', e);
-        alert('Failed to read file. Please try again.');
     };
     reader.readAsDataURL(file);
 }
