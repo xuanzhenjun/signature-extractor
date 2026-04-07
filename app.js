@@ -12,6 +12,14 @@ const thresholdSlider = document.getElementById('threshold');
 const thresholdValue = document.getElementById('thresholdValue');
 const downloadBtn = document.getElementById('downloadBtn');
 const resetBtn = document.getElementById('resetBtn');
+const chooseBtn = document.getElementById('chooseBtn');
+
+// 点击整个 dropZone 或 chooseBtn 都打开文件选择框（同一个 click，不重复触发）
+function openFilePicker(e) {
+    e.stopPropagation();
+    fileInput.click();
+}
+dropZone.addEventListener('click', openFilePicker);
 
 // 拖拽上传
 dropZone.addEventListener('dragover', (e) => {
