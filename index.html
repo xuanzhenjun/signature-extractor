@@ -172,21 +172,18 @@
 
         <!-- Upload Area -->
         <div id="uploadSection" style="background:#fff; border:1px solid #ebebeb; border-radius:12px; padding:0; overflow:hidden; margin-bottom:24px; transition:all 0.2s; display:block;">
-            <div id="dropZone" 
-                 role="button" 
-                 tabindex="0"
-                 aria-label="Upload signature image: click or drag and drop"
-                 style="border:2px dashed #d4d4d4; border-radius:10px; margin:24px; padding:56px 24px; text-align:center; cursor:pointer; transition:all 0.2s;" 
-                 onmouseover="this.style.borderColor='#6c47ff';this.style.background='#f9f7ff'" 
-                 onmouseout="this.style.borderColor='#d4d4d4';this.style.background='transparent'"
-                 onkeydown="if(event.key==='Enter'||event.key===' '){document.getElementById('fileInput').click()}">
+            <label for="fileInput" id="dropZone"
+                 style="display:block; border:2px dashed #d4d4d4; border-radius:10px; margin:24px; padding:56px 24px; text-align:center; cursor:pointer; transition:all 0.2s;"
+                 onmouseover="this.style.borderColor='#6c47ff';this.style.background='#f9f7ff'"
+                 onmouseout="this.style.borderColor='#d4d4d4';this.style.background='transparent'">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px;display:block;" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                 <p style="font-size:16px; font-weight:700; color:#1a1a1a; margin-bottom:6px;">Drop your image here</p>
                 <p style="font-size:16px; font-weight:700; color:#1a1a1a; margin-bottom:4px;">or click to browse</p>
                 <p style="font-size:14px; color:#999; margin-bottom:20px;">JPG, PNG supported · Max 10MB</p>
-                <button style="background:#3c9aff; color:#fff; border:none; padding:10px 28px; border-radius:6px; font-size:14px; font-weight:500; cursor:pointer; letter-spacing:0.2px;">Choose Image</button>
-                <input type="file" id="fileInput" accept="image/*" class="hidden" aria-label="File input">
-            </div>
+                <span style="display:inline-block; background:#3c9aff; color:#fff; padding:10px 28px; border-radius:6px; font-size:14px; font-weight:500; letter-spacing:0.2px;">Choose Image</span>
+                <input type="file" id="fileInput" accept="image/*" aria-label="File input"
+                       style="position:absolute; width:1px; height:1px; opacity:0; overflow:hidden;">
+            </label>
         </div>
 
         <!-- Processing Area -->

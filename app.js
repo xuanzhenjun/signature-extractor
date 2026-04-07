@@ -13,29 +13,27 @@ const thresholdValue = document.getElementById('thresholdValue');
 const downloadBtn = document.getElementById('downloadBtn');
 const resetBtn = document.getElementById('resetBtn');
 
-// 点击上传
-dropZone.addEventListener('click', () => {
-    fileInput.click();
-});
-
 // 拖拽上传
 dropZone.addEventListener('dragover', (e) => {
     e.preventDefault();
-    dropZone.classList.add('border-purple-500', 'bg-purple-50');
+    dropZone.style.borderColor = '#6c47ff';
+    dropZone.style.background = '#f9f7ff';
 });
 
 dropZone.addEventListener('dragleave', () => {
-    dropZone.classList.remove('border-purple-500', 'bg-purple-50');
+    dropZone.style.borderColor = '#d4d4d4';
+    dropZone.style.background = 'transparent';
 });
 
 dropZone.addEventListener('drop', (e) => {
     e.preventDefault();
-    dropZone.classList.remove('border-purple-500', 'bg-purple-50');
+    dropZone.style.borderColor = '#d4d4d4';
+    dropZone.style.background = 'transparent';
     const file = e.dataTransfer.files[0];
     if (file && file.type.startsWith('image/')) {
         loadImage(file);
     } else {
-        alert('请上传图片文件！');
+        alert('Please upload an image file!');
     }
 });
 
