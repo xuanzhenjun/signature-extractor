@@ -216,6 +216,20 @@
 
             <!-- Controls -->
             <div style="background:#fff; border:1px solid #ebebeb; border-radius:12px; padding:24px;">
+                <!-- Threshold slider -->
+                <div style="margin-bottom:16px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                        <label for="threshold" style="font-size:14px; font-weight:500; color:#555;">Background Threshold</label>
+                        <span id="thresholdValue" style="font-size:14px; font-weight:600; color:#3c9aff; min-width:28px; text-align:right;">128</span>
+                    </div>
+                    <input type="range" id="threshold" min="0" max="255" value="128"
+                           style="width:100%; accent-color:#3c9aff; cursor:pointer;"
+                           aria-label="Background removal threshold">
+                    <div style="display:flex; justify-content:space-between; font-size:12px; color:#bbb; margin-top:4px;">
+                        <span>Keep more (darker)</span>
+                        <span>Remove more (lighter)</span>
+                    </div>
+                </div>
                 <div class="flex gap-3">
                     <button id="downloadBtn" style="flex:1; background:#6c47ff; color:#fff; border:none; padding:12px 24px; border-radius:8px; font-size:14px; font-weight:500; cursor:pointer; letter-spacing:0.2px;">
                         Download Transparent PNG

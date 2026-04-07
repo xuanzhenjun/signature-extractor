@@ -98,11 +98,13 @@ function processImage() {
 }
 
 // 阈值调整
-thresholdSlider.addEventListener('input', (e) => {
-    currentThreshold = parseInt(e.target.value);
-    thresholdValue.textContent = currentThreshold;
-    processImage();
-});
+if (thresholdSlider) {
+    thresholdSlider.addEventListener('input', (e) => {
+        currentThreshold = parseInt(e.target.value);
+        if (thresholdValue) thresholdValue.textContent = currentThreshold;
+        processImage();
+    });
+}
 
 // 下载
 downloadBtn.addEventListener('click', () => {
