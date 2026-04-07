@@ -57,9 +57,9 @@ function loadImage(file) {
             displayOriginal();
             processImage();
             // 隐藏上传区域，显示处理区域
-            document.getElementById('uploadSection').classList.add('hidden');
-            processingArea.classList.remove('hidden');
-            processingArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document.getElementById('uploadSection').style.display = 'none';
+            document.getElementById('processingArea').style.display = 'block';
+            document.getElementById('processingArea').scrollIntoView({ behavior: 'smooth', block: 'start' });
         };
         img.src = e.target.result;
     };
@@ -120,8 +120,8 @@ downloadBtn.addEventListener('click', () => {
 
 // 重置
 resetBtn.addEventListener('click', () => {
-    processingArea.classList.add('hidden');
-    document.getElementById('uploadSection').classList.remove('hidden');
+    document.getElementById('processingArea').style.display = 'none';
+    document.getElementById('uploadSection').style.display = 'block';
     fileInput.value = '';
     originalImage = null;
     currentThreshold = 128;
