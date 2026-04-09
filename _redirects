@@ -1,0 +1,2 @@
+# Redirect www to non-www (301 permanent)
+https://www.signatureextractor.xyz/* https://signatureextractor.xyz/:splat 301!
